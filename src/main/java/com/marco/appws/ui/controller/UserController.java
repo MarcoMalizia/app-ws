@@ -38,7 +38,7 @@ public class UserController {
 		//populate the DTO with the properties coming from the request
 		BeanUtils.copyProperties(userDetails, userDto);
 		
-		//userService generate some additional values at service level and it pass them back at a DTO 
+		//userService generate some additional values at service level, insert the user into the db and it pass them back at a DTO 
 		UserDto createdUser = userService.createUser(userDto);
 		//populate the safe version of user to return
 		BeanUtils.copyProperties(createdUser, returnValue);
